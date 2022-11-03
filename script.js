@@ -14,17 +14,22 @@ CALCULAR.addEventListener('click', () => {
         let aux = 0;
         if(PESO<31){
             volumen = calculoHollidaySegar(PESO);
+            volumen=volumen.toFixed();
             VOLUMEN2.style.display = 'none';
         }
         else{ 
             aux = calculoSC(PESO);
             volumen= aux*1500;
-            volumen2 = aux*2000;    
+            volumen=volumen.toFixed();
+            volumen2 = aux*2000;
+            volumen=volumen.toFixed();
             VOLUMEN2.innerHTML ='SC*2000=' + volumen2 + 'cc diario';
             VOLUMEN2.style.display = 'block';  
         }
         let flujo = volumen/24;
+        flujo=flujo.toFixed();
         let mantmedio = flujo*1.5;
+        mantmedio=mantmedio.toFixed();
         VOLUMEN.innerHTML = volumen + 'cc diario';
         FLUJO.innerHTML = flujo + ' cc/hr';
         MANTENIMIENTO.innerHTML = 'm+m/2 = ' + mantmedio + ' cc/hr';
