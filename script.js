@@ -6,18 +6,18 @@ const ERROR = document.getElementById('error');
 const MANTENIMIENTO = document.getElementById('mantenimiento');
 const FLUJO = document.getElementById('flujo');
 CALCULAR.addEventListener('click', () => { 
-    const DATO = document.getElementById('peso').value
-    if (DATO > 0){
+    const PESO = document.getElementById('peso').value
+    if (PESO > 0){
         ERROR.style.display = 'none';
         let volumen = 0;
         let volumen2 = 0;
         let aux = 0;
-        if(DATO<31){
-            volumen = calcHollSeg(DATO);
+        if(PESO<31){
+            volumen = calculoHollidaySegar(PESO);
             VOLUMEN2.style.display = 'none';
         }
         else{ 
-            aux = calcSC(DATO);
+            aux = calculoSC(PESO);
             volumen= aux*1500;
             volumen2 = aux*2000;    
             VOLUMEN2.innerHTML ='SC*2000=' + volumen2 + 'cc diario';
@@ -39,7 +39,7 @@ CALCULAR.addEventListener('click', () => {
         MANTENIMIENTO.style.display = 'none';   
 }
 } )
-function calcHollSeg(peso){
+function calculoHollidaySegar(peso){
     let volumen = 0;
     
     peso=Number(peso);
@@ -54,7 +54,7 @@ function calcHollSeg(peso){
     }
     return volumen;
 }
-function calcSC(peso){    
+function calculoSC(peso){    
     peso=Number(peso);
     let aux = 0;
     aux=((peso*4)+7)/(peso+90);    
