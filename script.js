@@ -14,11 +14,13 @@ CALCULAR.addEventListener('click', () => {
         let aux = 0;
         if(PESO<31){
             volumen = calculoHollidaySegar(PESO);
+            volumen=Number(volumen);
             volumen=volumen.toFixed();
             VOLUMEN2.style.display = 'none';
         }
         else{ 
             aux = calculoSC(PESO);
+            volumen=Number(volumen);
             volumen= aux*1500;
             volumen=volumen.toFixed();
             volumen2 = aux*2000;
@@ -27,8 +29,10 @@ CALCULAR.addEventListener('click', () => {
             VOLUMEN2.style.display = 'block';  
         }
         let flujo = volumen/24;
+        flujo=Number(flujo);
         flujo=flujo.toFixed();
         let mantmedio = flujo*1.5;
+        mantmedio = Number(mantmedio);
         mantmedio=mantmedio.toFixed();
         VOLUMEN.innerHTML = volumen + 'cc diario';
         FLUJO.innerHTML = flujo + ' cc/hr';
