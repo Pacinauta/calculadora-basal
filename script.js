@@ -19,8 +19,7 @@ CALCULAR.addEventListener('click', () => {
         else{ 
             aux = calcSC(DATO);
             volumen= aux*1500;
-            volumen2 = aux*2000;
-            volumen2=eliminaceros(volumen2);
+            volumen2 = aux*2000;    
             VOLUMEN2.innerHTML ='SC*2000=' + volumen2 + 'cc diario';
             VOLUMEN2.style.display = 'block';  
         }
