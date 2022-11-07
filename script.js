@@ -1,4 +1,3 @@
-
 const CALCULAR = document.getElementById('calcular');
 const VOLUMEN = document.getElementById('volumen');
 const VOLUMEN2 = document.getElementById('volumen2')
@@ -14,17 +13,16 @@ CALCULAR.addEventListener('click', () => {
         let aux = 0;
         if(PESO<31){
             volumen = calculoHollidaySegar(PESO);
-            volumen=Number(volumen);
-            volumen=volumen.toFixed();
+            volumen=Number(volumen).toFixed(2);
             VOLUMEN2.style.display = 'none';
         }
         else{ 
             aux = calculoSC(PESO);
             volumen=Number(volumen);
             volumen= aux*1500;
-            volumen=volumen.toFixed();
+            volumen=volumen.toFixed(2);
             volumen2 = aux*2000;
-            volumen=volumen.toFixed();
+            volumen2=Number(volumen2).toFixed(2);
             VOLUMEN2.innerHTML ='SC*2000=' + volumen2 + 'cc diario';
             VOLUMEN2.style.display = 'block';  
         }
@@ -33,7 +31,7 @@ CALCULAR.addEventListener('click', () => {
         flujo=flujo.toFixed();
         let mantmedio = flujo*1.5;
         mantmedio = Number(mantmedio);
-        mantmedio=mantmedio.toFixed();
+        mantmedio=mantmedio.toFixed(2);
         VOLUMEN.innerHTML = volumen + 'cc diario';
         FLUJO.innerHTML = flujo + ' cc/hr';
         MANTENIMIENTO.innerHTML = 'm+m/2 = ' + mantmedio + ' cc/hr';
